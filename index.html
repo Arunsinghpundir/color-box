@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      nav {
+        background-color: black;
+        height: 10vh;
+        width: 100%;
+        transition: 1s;
+      }
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        background-color: azure;
+      }
+      .red,
+      .yellow,
+      .blue,
+      .green,
+      .btn-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .red {
+        background-color: red;
+        height: 50vh;
+        width: 50vh;
+      }
+      .green {
+        background-color: green;
+        height: 40vh;
+        width: 40vh;
+      }
+      .blue {
+        background-color: blue;
+        height: 30vh;
+        width: 30vh;
+      }
+
+      .yellow {
+        background-color: yellow;
+        height: 20vh;
+        width: 20vh;
+      }
+      .black {
+        background-color: black;
+        height: 10vh;
+        width: 10vh;
+      }
+      section div:hover {
+        border-radius: 50%;
+        transform: rotate(300deg);
+      }
+      section div {
+        transition: 2s;
+      }
+      .btn-box {
+        display: none;
+        height: 10vh;
+        margin: 0;
+      }
+      button {
+        color: white;
+        background: black;
+        height: 100%;
+        width: 100%;
+      }
+      .box {
+        border-radius: 50%;
+        transform: rotate(300deg);
+      }
+      @media (max-width: 500px) {
+        .red {
+          height: 40vh;
+          width: 40vh;
+        }
+        .green {
+          height: 30vh;
+          width: 30vh;
+        }
+        .blue {
+          height: 20vh;
+          width: 20vh;
+        }
+
+        .yellow {
+          height: 10vh;
+          width: 10vh;
+        }
+        .black {
+          height: 5vh;
+          width: 5vh;
+        }
+        .btn-box {
+          display: block;
+        }
+      }
+      h1 {
+        padding: 10px;
+        text-align: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1>Color Box</h1>
+    </nav>
+    <section>
+      <div class="red">
+        <div class="green">
+          <div class="blue">
+            <div class="yellow">
+              <div class="black"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="btn-box">
+      <button id="btn">Touch to rotate</button>
+    </div>
+    <script>
+      const btn = document.querySelector("#btn");
+      btn.addEventListener("mouseover", function () {
+        const red = document.querySelector(".red");
+        const yellow = document.querySelector(".yellow");
+        const blue = document.querySelector(".blue");
+        const green = document.querySelector(".green");
+        const black = document.querySelector(".black");
+        red.setAttribute("class", "red box");
+        yellow.setAttribute("class", "yellow box");
+        blue.setAttribute("class", "blue box");
+        green.setAttribute("class", "green box");
+        black.setAttribute("class", " black box");
+      });
+      btn.addEventListener("mouseout", function () {
+        const red = document.querySelector(".red");
+        const yellow = document.querySelector(".yellow");
+        const blue = document.querySelector(".blue");
+        const green = document.querySelector(".green");
+        const black = document.querySelector(".black");
+        red.setAttribute("class", "red");
+        yellow.setAttribute("class", "yellow");
+        blue.setAttribute("class", "blue");
+        green.setAttribute("class", "green");
+        black.setAttribute("class", " black");
+      });
+    </script>
+  </body>
+</html>
