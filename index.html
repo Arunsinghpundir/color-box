@@ -131,8 +131,9 @@
     <div class="btn-box">
       <button id="btn">Touch to rotate</button>
     </div>
-    <script>
+     <script>
       const btn = document.querySelector("#btn");
+      const section = document.querySelector("section");
       btn.addEventListener("mouseover", function () {
         const red = document.querySelector(".red");
         const yellow = document.querySelector(".yellow");
@@ -145,7 +146,7 @@
         green.setAttribute("class", "green box");
         black.setAttribute("class", " black box");
       });
-      btn.addEventListener("mouseout", function () {
+      section.addEventListener("mouseover", function () {
         const red = document.querySelector(".red");
         const yellow = document.querySelector(".yellow");
         const blue = document.querySelector(".blue");
